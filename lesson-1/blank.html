@@ -1,7 +1,24 @@
 <html>
-
 <head>
-    <title>Parkstone Grammar School</title>
+    <title>Part 1: HTML Basics | Parkstone Grammar School</title>
+    <meta name="Description" content="Part one of a six part series of lessons that show you how to use HTML, CSS, JavaScript and more.">
+
+    <script type="text/javascript">
+
+        function changingLights(){
+            if (document.getElementById("lamp1").style.backgroundColor == "orange") {
+                //Turn the lamps off
+                document.getElementById("lamp1").style.backgroundColor = "#111111";
+                document.getElementById("lamp2").style.backgroundColor = "#111111";
+            } else {
+                //Turn the lamps on
+                document.getElementById("lamp1").style.backgroundColor = "orange";
+                document.getElementById("lamp2").style.backgroundColor = "orange";
+            }
+        }
+        // Set the function to execute every 1 second (1000 milli seconds)
+        setInterval(changingLights,1000);
+    </script>
 
     <style>
     body {
@@ -20,7 +37,7 @@
     }
     .road {
         position: fixed;
-        background-color: darkgrey;
+        background-color: #454545;
         left: 250px;
         width: 450px;
         height: 100%;
@@ -44,11 +61,66 @@
         width: 50px;
         height: 250px;
     }
+
+    .crossing-lamp {
+        height: 100px;
+        width: 100px;
+        background-color: #333333;
+        border-radius: 10px;
+        }
+
+    .bulb {
+        height:80px;
+        width:80px;
+        background-color: #111111;
+        border-radius: 50%;
+        margin: 10px;    
+        }
+
+    #position1 {
+        position: fixed;
+        top: 330px;
+        left: 100px;
+    }
+
+    #position2 {
+        position: fixed;
+        top: 330px;
+        left: 750px;
+    }
+
+    .painted20 {
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        padding: 10px;
+        border: 5px solid white;
+        color: white;
+        text-align: center;
+        vertical-align: bottom;
+        font: 60px Arial, sans-serif;
+    }
+
+    #onRoad1 {
+        position: fixed;
+        top: 100px;
+        left: 550px;
+        transform: rotate(180deg);
+    }
+
+    #onRoad2 {
+        position: fixed;
+        top: 550px;
+        left: 300px;
+    }
     </style>    
 </head>
 
 <body>
+    <!-- First section is the road itself. -->
     <div class="road">
+
+        <!-- Inside that, we create the Zebra crossing on the road.  You'll notice that they start and finish with a white rectangle in the real world. -->
         <div class="zebra">
             <div class="stripe-white"></div>
             <div class="stripe-black"></div>
@@ -62,9 +134,22 @@
         </div>
     </div>
 
+    <!-- Here we have added the name of the school as a heading, plus a photo illustrating the frotn entrance. -->
     <div class="school">
         <h1>Parkstone Grammar School</h1>
         <img src="school.jpg" height="300" width="500" alt="Photo of Parkstone Grammar School" />
     </div>
+
+    <!-- Here are the two Zebra Crossing Lamps, one on each side of the road. -->
+    <div class="crossing-lamp" id="position1">
+        <div class="bulb" id="lamp1"></div>
+    </div>
+    <div class="crossing-lamp" id="position2">
+        <div class="bulb" id="lamp2"></div>
+    </div>
+
+    <!-- Here we have output the two 20MPH painted signs.  We have to rotate the text on onRoad1 so that it's the right way up for the road users. -->
+    <div class="painted20" id="onRoad1">20</div>
+    <div class="painted20" id="onRoad2">20</div>
 </body>
 </html>
