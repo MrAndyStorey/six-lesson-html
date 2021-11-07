@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Part 1: HTML Basics | Parkstone Grammar School</title>
+    <meta name="Description" content="Part one of a six part series of lessons that show you how to use HTML, CSS, JavaScript and more." />
+
+    <style>
+        /* Set the default font is use plus the green background. */
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: green;
+        }
+        /* Bigger font size for the heading. */
+        h1 {
+            font-size: 24pt;
+        }
+        /* This container is used to position the heading, paragraph and photo from activity 1 */
+        .school {
+            position: fixed;
+            top: 100px;
+            left: 850px;
+        }
+        /* This container is used to colour and size the road. */
+        .road {
+            position: fixed;
+            background-color: #454545;
+            left: 250px;
+            width: 450px;
+            height: 100%;
+        }
+        /* This container is used to position the zebra crossing stripes */
+        .zebra {
+            position: fixed;
+            top: 250px;
+            width: 450px;
+            height: 250px;
+        }
+        /* This container is used to draw a white stripe */
+        .stripe-white {
+            background-color: white;
+            float: left;
+            width: 50px;
+            height: 250px;
+        }
+        /* This container is used to draw a draw stripe */
+        .stripe-black {
+            background-color: black;
+            float: left;
+            width: 50px;
+            height: 250px;
+        }
+        </style>    
+    </head>
+<body>
+        <!-- First section is the road itself. -->
+        <div class="road">
+
+            <!-- Inside that, we create the Zebra crossing on the road.  You'll notice that they start and finish with a white rectangle in the real world. -->
+            <div class="zebra">
+                <div class="stripe-white"></div>
+                <div class="stripe-black"></div>
+                <div class="stripe-white"></div>
+                <div class="stripe-black"></div>
+                <div class="stripe-white"></div>
+                <div class="stripe-black"></div>
+                <div class="stripe-white"></div>
+                <div class="stripe-black"></div>
+                <div class="stripe-white"></div>
+            </div>
+        </div>
+    
+        <!-- Here we have added the name of the school as a heading, plus a photo illustrating the frotn entrance. -->
+        <div class="school">
+            <h1>Parkstone Grammar School</h1>
+            <p>This is part one of a six part series of lessons that show you how to use HTML, CSS, JavaScript and more.</p>
+            <p>Over the six lessons, we will be building a webpage that recreates the recently installed Zerba crossing outside the school and them making improvements to it.</p>
+                    <img src="school.jpg" height="300" width="500" alt="Photo of Parkstone Grammar School" />
+        </div>
+    </body>
+</html>
