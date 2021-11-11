@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Live Coding 2</title>
+
+    <script type="text/javascript">
+
+        function myFunction(){
+            if (document.getElementById("myArea").style.backgroundColor == "red") {
+                //Change to Yellow Background
+                document.getElementById("myArea").style.backgroundColor = "yellow";
+                document.getElementById("myArea").style.backgroundColor = "yellow";
+            } else {
+                //Change to Red Background
+                document.getElementById("myArea").style.backgroundColor = "red";
+                document.getElementById("myArea").style.backgroundColor = "red";
+            }
+        }
+        // Set the function to execute every 1 second (1000 milli seconds)
+        setInterval(myFunction,1000);
+    </script>
+
+    <style>
+        #myArea
+        {
+            background-color: yellow;
+        }
+    </style>    
+</head>
+<body>
+    <div id="myArea">
+    <h1>Live coding 2</h1>
+    <p>I will demonstrate:</p>
+    <ul>
+        <li>How to define a function</li>
+        <li>How to perform selection in JS</li>
+        <li>How to read/update an element in DOM (Document Object Model)</li>
+        <li>How to call a function every second</li>
+    </ul>
+    </div>
+</body>
+</html>
