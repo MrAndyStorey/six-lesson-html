@@ -9,50 +9,26 @@
             switch(parseInt(document.getElementById('nextPhase').value)) {
                 case 1:
                     console.log("Sequence: Red.");
-
-                    document.getElementById('lampRed').style.backgroundColor = 'red';
-                    document.getElementById('lampAmber').style.backgroundColor = 'black';
-                    document.getElementById('lampGreen').style.backgroundColor = 'black';
-
                     document.getElementById('nextPhase').value = 2;
                     break;
 
                 case 2:
                     console.log("Sequence: Red, Amber.");
-
-                    document.getElementById('lampRed').style.backgroundColor = 'red';
-                    document.getElementById('lampAmber').style.backgroundColor = 'orange';
-                    document.getElementById('lampGreen').style.backgroundColor = 'black';
-                    
                     document.getElementById('nextPhase').value = 3;
                     break;
 
                 case 3:
                     console.log("Sequence: Green.");
-
-                    document.getElementById('lampRed').style.backgroundColor = 'black';
-                    document.getElementById('lampAmber').style.backgroundColor = 'black';
-                    document.getElementById('lampGreen').style.backgroundColor = 'green';
-                    
                     document.getElementById('nextPhase').value = 4;
                     break;
                 
                 case 4:
                     console.log("Sequence: Amber.");
-
-                    document.getElementById('lampRed').style.backgroundColor = 'black';
-                    document.getElementById('lampAmber').style.backgroundColor = 'orange';
-                    document.getElementById('lampGreen').style.backgroundColor = 'black';
-                    
                     document.getElementById('nextPhase').value = 1;
                     break;
                 }
             }
-        // Extension;  Make the changes every 2 seconds without having to click a button.
-        myTimer=setInterval(function(){changeColour()},2000);
-
     </script>
-
 
     <style>
         /* Set the default font is use plus the background. */
