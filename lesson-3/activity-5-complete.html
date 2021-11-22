@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>Part 3: JS Event Basics | Parkstone Grammar School</title>
+    <meta name="Description" content="Part three of a six part series of lessons that show you how to use JavaScript." />
+
+    <script type="text/javascript">
+
+        function changeColour(){
+            switch(parseInt(document.getElementById('nextPhase').value)) {
+                case 1:
+                    console.log("Sequence: Red.");
+
+                    document.getElementById('lampRed').style.backgroundColor = 'red';
+                    document.getElementById('lampAmber').style.backgroundColor = 'black';
+                    document.getElementById('lampGreen').style.backgroundColor = 'black';
+
+                    document.getElementById('nextPhase').value = 2;
+                    break;
+
+                case 2:
+                    console.log("Sequence: Red, Amber.");
+
+                    document.getElementById('lampRed').style.backgroundColor = 'red';
+                    document.getElementById('lampAmber').style.backgroundColor = 'orange';
+                    document.getElementById('lampGreen').style.backgroundColor = 'black';
+                    
+                    document.getElementById('nextPhase').value = 3;
+                    break;
+
+                case 3:
+                    console.log("Sequence: Green.");
+
+                    document.getElementById('lampRed').style.backgroundColor = 'black';
+                    document.getElementById('lampAmber').style.backgroundColor = 'black';
+                    document.getElementById('lampGreen').style.backgroundColor = 'green';
+                    
+                    document.getElementById('nextPhase').value = 4;
+                    break;
+                
+                case 4:
+                    console.log("Sequence: Amber.");
+
+                    document.getElementById('lampRed').style.backgroundColor = 'black';
+                    document.getElementById('lampAmber').style.backgroundColor = 'orange';
+                    document.getElementById('lampGreen').style.backgroundColor = 'black';
+                    
+                    document.getElementById('nextPhase').value = 1;
+                    break;
+                }
+            }
+        // Extension;  Make the changes every 2 seconds without having to click a button.
+        myTimer=setInterval(function(){changeColour()},2000);
+
+    </script>
+
+
+    <style>
+        /* Set the default font is use plus the background. */
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color:white;
+        }
+
+        /* Set the defaults for the lamp. */
+        .crossing-lamp {
+            height: 280px;
+            width: 100px;
+            background-color: black;
+            border-radius: 10px;
+            }
+
+        .bulb {
+            height:80px;
+            width:80px;
+            background-color: black;
+            border-radius: 50%;
+            margin: 10px;    
+            }
+
+        /* We need to set the first lamp as a starting point. 
+         We've also set binary=2 in the HTML */    
+        #lampRed {
+            background-color: red;
+            }
+    </style>
+
+</head>
+<body>
+    <!-- First Div tag is the object that we wish to change. -->
+    <div class="crossing-lamp">
+        <div class="bulb" id="lampRed"></div>
+        <div class="bulb" id="lampAmber"></div>
+        <div class="bulb" id="lampGreen"></div>
+    </div>
+
+    <div>
+        <!-- Next up is the button that the user interacts with. -->
+        <button id="toggle" onclick="changeColour()">Change</button>
+
+        <!-- Next up is the binary represatation of the lights. -->
+        <!-- If you wish to see this - change type="text" -->
+        <!-- If you wish to hide this - change type="hidden" -->
+        <input type="hidden" id="nextPhase" value="2" />
+    </div>
+
+    <div>
+        <!-- To help coding the logic of our function, the light sequences are shown below.-->
+        <img src="traffic-light-sequence.jpg" width="600" height="420" alt="A reminder of the correct light sequences."/>
+    </div>
+
+</body>
+</html>

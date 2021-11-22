@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Part 3: JS Event Basics | Parkstone Grammar School</title>
+    <meta name="Description" content="Part three of a six part series of lessons that show you how to use JavaScript." />
+
+    <script type="text/javascript">
+
+        function changeColour(){
+                //First we need to determine which is the next phase. This is held in the "nextPhase" text field
+
+                //Create a Switch Statement to decide hat to do.
+
+                //To start with, why not use the Javascript Developer Console - like you'd use print in python;
+                //To see the output in Chrome.  View > Developer > Javascript Console
+                //To see the output in Firefox.  Tools > Browser Tools > Web Developer Tools
+                
+                //Once the logic is working correctly, use the document.getElementById('lamp').style.backgroundColor = 'colour' as used previously.
+
+                console.log("In changeColour function.");
+            }
+
+        // Extension;  Make the changes every 2 seconds without having to click a button.
+
+    </script>
+
+
+    <style>
+        /* Set the default font is use plus the background. */
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color:white;
+        }
+
+        /* Set the defaults for the lamp. */
+        .crossing-lamp {
+            height: 280px;
+            width: 100px;
+            background-color: black;
+            border-radius: 10px;
+            }
+
+        .bulb {
+            height:80px;
+            width:80px;
+            background-color: black;
+            border-radius: 50%;
+            margin: 10px;    
+            }
+
+        /* We need to set the first lamp as a starting point. */
+        #lampRed {
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- First Div tag is the object that we wish to change. -->
+    <div class="crossing-lamp">
+        <div class="bulb" id="lampRed"></div>
+        <div class="bulb" id="lampAmber"></div>
+        <div class="bulb" id="lampGreen"></div>
+    </div>
+
+    <div>
+        <!-- Next up is the button that the user interacts with. -->
+        <button id="toggle" onclick="changeColour()">Change</button>
+
+        <!-- Next up is the binary represatation of the lights. -->
+        <!-- If you wish to see this - change type="text" -->
+        <!-- If you wish to hide this - change type="hidden" -->
+        <input type="text" id="nextPhase" value="2" />
+    </div>
+
+    <div>
+        <!-- To help coding the logic of our function, the light sequences are shown below.-->
+        <img src="traffic-light-sequence.jpg" width="600" height="420" alt="A reminder of the correct light sequences."/>
+    </div>
+
+</body>
+</html>

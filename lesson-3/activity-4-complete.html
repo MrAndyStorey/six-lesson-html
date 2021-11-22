@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Part 3: JS Event Basics | Parkstone Grammar School</title>
+    <meta name="Description" content="Part three of a six part series of lessons that show you how to use JavaScript." />
+
+    <script type="text/javascript">
+
+        function changeColour(){
+            var myLamp = document.getElementById('lamp1');
+            if (myLamp.style.backgroundColor === 'red') 
+            {
+                myLamp.style.backgroundColor = 'black';
+                console.log("Colour changed to black.");
+            } else {
+                myLamp.style.backgroundColor = 'red';
+                console.log("Colour changed to red.");
+            }
+        }
+    </script>
+
+
+    <style>
+        /* Set the default font is use plus the background. */
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color:white;
+        }
+
+        /* Set the defaults for the lamp. */
+        .crossing-lamp {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            border-radius: 10px;
+            }
+
+        .bulb {
+            height:80px;
+            width:80px;
+            background-color: black;
+            border-radius: 50%;
+            margin: 10px;    
+            }
+    </style>
+
+</head>
+<body>
+    <!-- First Div tag is the object that we wish to change. -->
+    <div class="crossing-lamp">
+        <div class="bulb" id="lamp1"></div>
+    </div>
+
+    <!-- Next up is the button that the user interacts with. -->
+    <div>
+        <button id="toggle" onclick="changeColour()">Change</button>
+    </div>
+
+</body>
+</html>
