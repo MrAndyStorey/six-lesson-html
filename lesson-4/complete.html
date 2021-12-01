@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Part 1: HTML Basics | Parkstone Grammar School</title>
+    <meta name="Description" content="Part one of a six part series of lessons that show you how to use HTML, CSS, JavaScript and more." />
+
+    <!-- Link to the external javascript (JS) file. -->
+    <script type="text/javascript" src="complete.js"></script>
+
+    <!-- Link to the external stylesheet (CSS) file. -->
+    <link rel="stylesheet" href="complete.css" />
+
+</head>
+
+<body>
+    <!-- First section is the road itself. -->
+    <div class="road">
+
+        <!-- Inside that, we create the Zebra crossing on the road.  You'll notice that they start and finish with a white rectangle in the real world. -->
+        <div class="zebra">
+            <div class="stripe-white"></div>
+            <div class="stripe-black"></div>
+            <div class="stripe-white"></div>
+            <div class="stripe-black"></div>
+            <div class="stripe-white"></div>
+            <div class="stripe-black"></div>
+            <div class="stripe-white"></div>
+            <div class="stripe-black"></div>
+            <div class="stripe-white"></div>
+        </div>
+    </div>
+
+    <!-- Here we have added the name of the school as a heading, plus a photo illustrating the frotn entrance. -->
+    <div class="school">
+        <h1>Parkstone Grammar School</h1>
+        <p>This is the completed page from the six part series of lessons that demonstrated how to use HTML, CSS, JavaScript and more.</p>
+        <p>You can click on the <b>Let me Cross</b> button to allow you to cross the road using the light-controlled pedestrian crossing (Pelican).</p>
+        <p>Note how the button is disabled during certain sections of the sequence.</p>
+
+        <img src="school.jpg" height="300" width="500" alt="Photo of Parkstone Grammar School" />
+
+        <!-- Next up is the counter that we use to determine where we are in the lights sequence. -->
+        <!-- We hide this from the user, but if you need to see the value for debugging, change the type attribute to text.     ie    type="text" -->
+        <input type="hidden" id="nextPhase" value="4" />
+    </div>
+
+    <!-- Here are the two Zebra Crossing Lamps, one on each side of the road. -->
+    <div class="crossing-lamp" id="position1">
+        <div class="bulb" id="lamp1"></div>
+    </div>
+    <div class="crossing-lamp" id="position2">
+        <div class="bulb" id="lamp2"></div>
+    </div>
+
+    <div class="traffic-lamp" id="position3">
+        <div class="bulb" id="lampRed"></div>
+        <div class="bulb" id="lampAmber"></div>
+        <div class="bulb" id="lampGreen"></div>
+    </div>
+
+    <div class="traffic-lamp" id="position4">
+        <div class="bulb" id="pedLampRed"></div>
+        <div class="bulb" id="pedLampGreen"></div>
+        <!-- Next up is the button that the user interacts with. -->
+        <button id="toggle" onclick="changeColour()">Let me Cross</button>
+    </div>
+
+    <!-- Here we have output the two 20MPH painted signs.  We have to rotate the text on onRoad1 so that it's the right way up for the road users. -->
+    <div class="painted20" id="onRoad1">20</div>
+    <div class="painted20" id="onRoad2">20</div>
+</body>
+</html>

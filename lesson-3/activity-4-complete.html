@@ -6,16 +6,20 @@
     <script type="text/javascript">
 
         function changeColour(){
-            var myLamp = document.getElementById('lamp1');
-            if (myLamp.style.backgroundColor === 'red') 
+            if (document.getElementById("lamp1").style.backgroundColor === "red") 
             {
-                myLamp.style.backgroundColor = 'black';
+                document.getElementById("lamp1").style.backgroundColor = "black";
                 console.log("Colour changed to black.");
             } else {
-                myLamp.style.backgroundColor = 'red';
+                document.getElementById("lamp1").style.backgroundColor = "red";
                 console.log("Colour changed to red.");
             }
-        }
+            }
+            
+        function documentHasLoaded(){
+            console.log("Document has loaded.");
+            }
+            
     </script>
 
 
@@ -34,7 +38,7 @@
             border-radius: 10px;
             }
 
-        .bulb {
+            .bulb {
             height:80px;
             width:80px;
             background-color: black;
@@ -44,7 +48,7 @@
     </style>
 
 </head>
-<body>
+<body onload="documentHasLoaded()">
     <!-- First Div tag is the object that we wish to change. -->
     <div class="crossing-lamp">
         <div class="bulb" id="lamp1"></div>
@@ -52,7 +56,7 @@
 
     <!-- Next up is the button that the user interacts with. -->
     <div>
-        <button id="toggle" onclick="changeColour()">Change</button>
+        <button onclick="changeColour()">Change</button>
     </div>
 
 </body>
